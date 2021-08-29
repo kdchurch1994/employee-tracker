@@ -1,20 +1,23 @@
 
 CREATE TABLE Department (
-    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
     name VARCHAR(30)
 );
 
 CREATE TABLE Role (
-    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
     title VARCHAR(30),
     salary DECIMAL, 
-    FOREIGN KEY (department_id) REFERENCES Department(id) 
+    department_id INTEGER, 
+    CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES Department(id) 
 );
 
 create TABLE Employee (
-    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY NOT NULL,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
-    FOREIGN KEY (role_id) REFERENCES Role(id),
-    FOREIGN KEY (manager_id) References Employee(id)
+    role_id INTEGER, 
+    manager_id INTEGER,
+    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES Role(id),
+    CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES Employee(id) 
 );
