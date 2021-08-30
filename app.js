@@ -29,6 +29,7 @@ exports.start = () => {
                 "View All Roles",
                 "View All Employees",
                 "Add a Department",
+                "Add a Role",
                 "Exit"
             ]
 
@@ -47,7 +48,10 @@ exports.start = () => {
             } else if (choice.options === "Add a Department") {
                 add.addDepartment();
                 return;
-            }else if (choice.options === "Exit") {
+            } else if (choice.options === "Add a Role") {
+                add.addRole();
+                return;
+            } else if (choice.options === "Exit") {
                 connection.end();
                 return;
             }
