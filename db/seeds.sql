@@ -1,6 +1,6 @@
 INSERT INTO Department (name) VALUES ('Management'), ('Cashiers'), ('Stockers');
 INSERT INTO Role (title, salary, department_id) VALUES
-('Grocery Manager', 65000.00, 1),
+('Grocery Manager', 80000.00, 1),
 ('Cashier', 40000.00, 2),
 ('Stocker', 40000.00, 3),
 ('Produce Manager', 65000.00, 1),
@@ -18,5 +18,5 @@ INSERT INTO Employee (first_name, last_name, role_id, manager_id) VALUES
 ('Mason', 'Jackson', 3, 2),
 ('Denise', 'Everson', 3, 4),
 ('Jefferson', 'Jefferies', 3, 3),
-('Alex', 'Wilson', 2, 2),
+('Alex', 'Wilson', 2, 1),
 ('Jason', 'Michaels', 3, 1);
