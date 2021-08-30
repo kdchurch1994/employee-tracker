@@ -24,20 +24,22 @@ exports.start = () => {
             name: "options",
             message: "Please choose one of the following. (Required)",
             choices: [
+                "View All Departments",
+                "View All Roles",
                 "View All Employees",
-                "Add an Employee",
-                "Update an Employee's Role",
                 "Exit"
             ]
 
         }
     ])
         .then(function(choice) {
-            if(choice.options = "View All Employees") {
+            if(choice.options = "View All Departments") {
+                view.viewAllDepartments();
+            } else if (choice.options = "View All Roles") {
+                view.viewAllRoles();
+            } else if (choice.options = "View All Employees") {
                 view.viewAllEmployees();
-            } else if (choice.otions = "Exit") {
-                connection.end();
-                return;
             }
+            
         });
 };
