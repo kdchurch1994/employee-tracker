@@ -33,16 +33,16 @@ exports.start = () => {
         }
     ])
         .then(function(choice) {
-            if(choice.options = "View All Departments") {
+            if(choice.options === "View All Departments") {
                 view.viewAllDepartments();
                 return;
-            } else if (choice.options = "View All Roles") {
+            } else if (choice.options === "View All Roles") {
                 view.viewAllRoles();
                 return;
-            } else if (choice.options = "View All Employees") {
+            } else if (choice.options === "View All Employees") {
                 view.viewAllEmployees();
                 return;
-            } else if (choice.options = "Exit") {
+            } else if (choice.options === "Exit") {
                 connection.end();
                 return;
             }
