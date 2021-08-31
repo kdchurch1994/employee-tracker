@@ -2,7 +2,8 @@ const mysql = require('mysql');
 const inquirer = require('inquirer');
 const consoleTable = ('console.table');
 const view = require('./lib/viewQueries')
-const add = require('./lib/addQueries')
+const add = require('./lib/addQueries');
+const update = require('./lib/updateQuery');
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -14,9 +15,20 @@ const connection = mysql.createConnection({
 
 connection.connect(function(err) {
     if(err) throw err;
-    console.log("Connection Established");
+    console.log("Connection to the database has been established");
     exports.start();
 });
+
+const wantToExit = () => {
+    inquirer.prompt([
+        {
+            type: "confirm",
+            name: "exit",
+            message: "Are you sure you want to exit?",
+            default: "Yes"
+        }
+    ])
+};
 
 exports.start = () => {
     inquirer.prompt([
@@ -31,6 +43,7 @@ exports.start = () => {
                 "Add a Department",
                 "Add a Role",
                 "Add an Employee",
+                "Update an Employee Role",
                 "Exit"
             ]
 
@@ -55,8 +68,12 @@ exports.start = () => {
             } else if (choice.options === "Add an Employee") {
                 add.addEmployee();
                 return;
+            } else if (choice.options === "Update an Employee Role") {
+                update.updateEmployeeRole();
+                return;
             } else if (choice.options === "Exit") {
                 connection.end();
+                wantToExit();
                 return;
             }
         });
