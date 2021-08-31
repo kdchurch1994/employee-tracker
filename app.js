@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const inquirer = require('inquirer');
 const consoleTable = ('console.table');
 const view = require('./lib/viewQueries')
-const add = require('./lib/addQuery')
+const add = require('./lib/addQueries')
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -30,6 +30,7 @@ exports.start = () => {
                 "View All Employees",
                 "Add a Department",
                 "Add a Role",
+                "Add an Employee",
                 "Exit"
             ]
 
@@ -50,6 +51,9 @@ exports.start = () => {
                 return;
             } else if (choice.options === "Add a Role") {
                 add.addRole();
+                return;
+            } else if (choice.options === "Add an Employee") {
+                add.addEmployee();
                 return;
             } else if (choice.options === "Exit") {
                 connection.end();
