@@ -1,4 +1,4 @@
-INSERT INTO Department (name) VALUES ('Grocery'), ('Cashiers'), ('Stockers'), ('Frozen'), ('Meat'), ('Produce'); --Inserts the departments Grocery, Cashiers, Stockers, Frozen, Meat, and Produce into the Department table
+INSERT INTO Department (name) VALUES ('Grocery'), ('Cashiers'), ('Stockers'), ('Frozen'), ('Meat'), ('Produce'); -- Inserts the departments Grocery, Cashiers, Stockers, Frozen, Meat, and Produce into the Department table
 INSERT INTO Role (title, salary, department_id) VALUES -- Inserts the listed values into the Role table
 ('Grocery Manager', 80000.00, 1),
 ('Cashier', 40000.00, 2),
