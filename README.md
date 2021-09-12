@@ -24,7 +24,7 @@
   Kyle Church
   
   ## Link to Video
-  Employee-Tracker Walkthrough: https://youtu.be/9DhLDodChAo
+  Social-Network-API Walkthrough Video: https://youtu.be/X7-3Vzt9fmg
 
   ## Licenses
   
