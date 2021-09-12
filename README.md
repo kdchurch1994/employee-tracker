@@ -24,7 +24,7 @@
   Kyle Church
   
   ## Link to Video
-  Social-Network-API Walkthrough Video: https://youtu.be/X7-3Vzt9fmg
+  Emmployee Tracker Walkthrough Video: https://youtu.be/9DhLDodChAo
 
   ## Licenses
   
